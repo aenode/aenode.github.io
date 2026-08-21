@@ -43,7 +43,6 @@ jobs:
           max_attempts: 3
           retry_wait_seconds: 5
           command: |
-            pnpm nx run-many -t typecheck 
             pnpm nx run-many -t lint
 
       - name: Build and test

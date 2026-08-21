@@ -1,8 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-nx-welcome',
+  selector: 'ae-nx-welcome',
   imports: [CommonModule],
   template: `
     <!--
