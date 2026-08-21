@@ -1,6 +1,6 @@
+import { InputValidator, isDefined } from '@aenode/material/validators';
 import { Directive, inject, input, model, OnInit, signal } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
-import { InputValidator, isDefined } from '@vnodes/material/validators';
 
 export type InputOption<T> = {
   id?: string;
@@ -134,7 +134,7 @@ export abstract class BaseInput<ValueType = any>
     //
   };
 
-  writeValue(value: ValueType): void {
+  writeValue(_value: ValueType): void {
     //
   }
   readonly ngControl = inject(NgControl, { self: true, optional: true });

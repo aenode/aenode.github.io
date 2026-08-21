@@ -1,8 +1,8 @@
+import { FieldsetComponent } from '@aenode/material/fieldset';
+import { BaseInput } from '@aenode/material/input';
 import { Component, input } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
-import { FieldsetComponent } from '@vnodes/material/fieldset';
-import { BaseInput } from '@vnodes/material/input';
 
 export type RadioOption = {
   value: any;
@@ -10,7 +10,7 @@ export type RadioOption = {
 };
 
 @Component({
-  selector: 'vn-input[type="radio"], vn-input[type="radio-group"]',
+  selector: 'ae-input[type="radio"], ae-input[type="radio-group"]',
   standalone: true,
   imports: [ReactiveFormsModule, MatRadioModule, FieldsetComponent],
   template: `
@@ -21,7 +21,7 @@ export type RadioOption = {
     @let __options = options();
 
     @if (__control) {
-      <vn-fieldset [label]="label()">
+      <ae-fieldset [label]="label()">
         <mat-radio-group
           [formControl]="__control"
           [disabled]="__disabled"
@@ -34,15 +34,14 @@ export type RadioOption = {
             }}</mat-radio-button>
           }
         </mat-radio-group>
-      </vn-fieldset>
+      </ae-fieldset>
     }
   `,
-  styles:`
-  mat-radio-group > mat-radio-button:not(:first-child) {  
-    margin-left: 1rem;
-  }  
-  
-  `
+  styles: `
+    mat-radio-group > mat-radio-button:not(:first-child) {
+      margin-left: 1rem;
+    }
+  `,
 })
 export class RadioComponent extends BaseInput {
   type = input.required<'radio' | 'radio-group'>();

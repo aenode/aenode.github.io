@@ -1,17 +1,17 @@
 {
-  "name": "@vnodes/material",
-  "version": "0.0.16",
-  "description": "Vnodes Material Library",
+  "name": "@aenode/material",
+  "version": "0.0.1",
+  "description": "aenode Material Library",
   "keywords": [
     "plugin"
   ],
   "author": {
     "name": "Robert Brightline",
-    "email": "robert.brightline+vnodes-material@gmail.com",
-    "url": "https://vnodes.github.io/vnodes"
+    "email": "robert.brightline+aenode-material@gmail.com",
+    "url": "https://aenode.github.io/aenode"
   },
-  "homepage": "https://vnodes.github.io/libs/material",
-  "icon": "https://vnodes.github.io/libs/material/favicon.png",
+  "homepage": "https://aenode.github.io/libs/material",
+  "icon": "https://aenode.github.io/libs/material/favicon.png",
   "funding": [
     "https://cash.app/$puqlib"
   ],
@@ -33,14 +33,23 @@
     }
   },
   "peerDependencies": {
-    "@angular/cdk": "^21.2.6",
-    "@angular/material": "^21.2.6",
-    "rxjs": "~7.8.0"
+    "@aenode/cdk": "workspace:*",
+    "@aenode/material": "workspace:*",
+    "@angular/cdk": "^22.1.3",
+    "@angular/common": "~22.0.8",
+    "@angular/core": "~22.0.8",
+    "@angular/material": "^22.1.3",
+    "@storybook/addon-docs": "^10.3.5",
+    "chart.js": "^4.5.1"
   },
   "devDependencies": {
-    "@angular/cdk": "^21.2.6",
-    "@angular/material": "^21.2.6",
+    "@aenode/cdk": "workspace:*",
+    "@aenode/material": "workspace:*",
+    "@angular/cdk": "^22.1.3",
+    "@angular/common": "~22.0.8",
+    "@angular/core": "~22.0.8",
+    "@angular/material": "^22.1.3",
     "@storybook/addon-docs": "^10.3.5",
-    "@vnodes/material": "workspace:*"
+    "chart.js": "^4.5.1"
   }
 }

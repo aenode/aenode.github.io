@@ -1,6 +1,6 @@
+import { Icon } from '@aenode/material/common';
 import { computed, Directive, inject, input, model } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { Icon } from '@vnodes/material/common';
 import { FormModelComponent } from './form-model';
 
 export type InputType =
@@ -17,29 +17,25 @@ export type InputType =
   | 'slider'
   | 'slider';
 
-
-
-
 /**
  * Base model base input component
  */
-@Directive({ selector: "[vnInput]" })
+@Directive({ selector: '[aeInput]' })
 export class InputModelDirective<ValueType, TInputTYpe extends InputType> {
-  readonly formModel = inject(FormModelComponent, { optional: true })
+  readonly formModel = inject(FormModelComponent, { optional: true });
 
   name = input.required<string>();
-  type = input.required<TInputTYpe>()
+  type = input.required<TInputTYpe>();
   inputmode = computed<HTMLInputElement['inputMode']>(() => {
     if (this.type() === 'integer') {
-      return 'numeric'
+      return 'numeric';
     } else if (this.type() === 'number') {
-      return 'decimal'
+      return 'decimal';
     }
     return 'text';
-  })
+  });
   value = model<ValueType | null>();
-  disabled = model<boolean>(false)
-
+  disabled = model<boolean>(false);
 
   label = input<string>();
   hint = input<string>();
@@ -71,14 +67,14 @@ export class InputModelDirective<ValueType, TInputTYpe extends InputType> {
    */
   max = input<number>(Number.MAX_SAFE_INTEGER);
 
-  pattern = input<string | null>(null)
+  pattern = input<string | null>(null);
 
   /**
    * Number of decimal allowed
    */
   decimals = input<number>(6);
 
-  // Input states 
+  // Input states
 
   isDirty = model<boolean>(false);
   isTouched = model<boolean>(false);
@@ -87,35 +83,30 @@ export class InputModelDirective<ValueType, TInputTYpe extends InputType> {
   isInvalid = model<boolean>(true);
 
   isSubmitted = computed(() => {
-    return !!this.formModel?.isSubmitted()
-  })
+    return !!this.formModel?.isSubmitted();
+  });
 
   errorMessages = computed(() => {
-    const name = this.name()
+    const name = this.name();
     const errors = this.formModel?.errors();
     if (name && errors) {
-      return errors[name]
+      return errors[name];
     }
   });
 
   readonly errorStateMatcher: ErrorStateMatcher = {
     isErrorState: () => {
-      return this.isTouched() && this.isInvalid()
-    }
-  }
-
-
-
-
+      return this.isTouched() && this.isInvalid();
+    },
+  };
 
   reset() {
     this.isDirty.set(false);
     this.isTouched.set(false);
     this.isValid.set(false);
     this.isInvalid.set(false);
-    this.value.set(null)
+    this.value.set(null);
   }
-
 
   set(value: ValueType | null | undefined) {
     this.value.set(value);
@@ -126,21 +117,19 @@ export class InputModelDirective<ValueType, TInputTYpe extends InputType> {
     this.isInvalid.set(false);
   }
 
-
   disable() {
     this.disabled.set(true);
   }
 
-  handleTouchEvent(event: Event) {
+  handleTouchEvent() {
     this.isTouched.set(true);
   }
 
-  handleClickEvent(event: Event) {
+  handleClickEvent() {
     this.isTouched.set(true);
   }
 
-  handleInputEvent(event: Event) {
-    this.isDirty.set(true)
+  handleInputEvent() {
+    this.isDirty.set(true);
   }
-
 }

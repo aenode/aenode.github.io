@@ -1,93 +1,38 @@
+import { Color, colorVar } from '@aenode/material/common';
 import { computed, Directive, input } from '@angular/core';
-import { Color, colorVar } from '@vnodes/material/common';
-
 
 /**
  * Directive to set elements's style color from the angular-theme variables
  */
 @Directive({
-  selector: `[vnColor]`,
+  selector: `[aeColor]`,
   host: {
-    '[style.color]': 'vnColorComputed()',
-  }
+    '[style.color]': 'aeColorComputed()',
+  },
 })
 export class ColorDirective {
-
   /**
    * Text color variable {@link Color}
    */
-  vnColor = input.required<Color>();
+  aeColor = input.required<Color>();
 
-  protected vnColorComputed = computed(() => colorVar(this.vnColor()))
+  protected aeColorComputed = computed(() => colorVar(this.aeColor()));
 }
-
-
 
 /**
  * Directive to set elements's style color from the angular-theme variables
  */
 @Directive({
-  selector: `[vnBgColor]`,
+  selector: `[aeBgColor]`,
   host: {
-    '[style.backgroundColor]': 'vnBgColorComputed()',
-  }
+    '[style.backgroundColor]': 'aeBgColorComputed()',
+  },
 })
 export class BgColorDirective {
-
   /**
    * Background color variable {@link Color}
    */
-  vnBgColor = input.required<Color>();
+  aeBgColor = input.required<Color>();
 
-  protected vnBgColorComputed = computed(() => colorVar(this.vnBgColor()))
+  protected aeBgColorComputed = computed(() => colorVar(this.aeBgColor()));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

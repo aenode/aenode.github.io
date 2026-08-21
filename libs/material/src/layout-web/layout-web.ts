@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'vn-layout-web',
+  selector: 'ae-layout-web',
   imports: [],
   template: `<p>layout-web</p>`,
 })

@@ -1,57 +1,74 @@
+import { FlexModule } from '@aenode/material/flex';
+import { BaseInput } from '@aenode/material/input';
 import { CdkTrapFocus } from '@angular/cdk/a11y';
-import { Component, contentChildren, Directive, input, NgModule, output } from '@angular/core';
+import {
+  Component,
+  contentChildren,
+  Directive,
+  input,
+  NgModule,
+  output,
+} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { FlexModule } from '@vnodes/material/flex';
-import { BaseInput } from '@vnodes/material/input';
-
 
 /**
  * Positional directive to define the form action buttons location
  */
-@Directive({ selector: "[vnFormAction]" })
-export class FormActionDirective { }
+@Directive({ selector: '[aeFormAction]' })
+export class FormActionDirective {}
 
 /**
  * Form container component that renders input components and form actions
  */
 @Component({
-  selector: 'vn-form, [vnForm]',
-  imports: [FlexModule, MatButtonModule, MatIconModule, CdkTrapFocus,],
-  exportAs: "vnForm",
+  selector: 'ae-form, [vnForm]',
+  imports: [FlexModule, MatButtonModule, MatIconModule, CdkTrapFocus],
+  exportAs: 'vnForm',
   template: `
-      <div vnFlexCol vnFlexGap cdkTrapFocus>
-        <ng-content select="vn-input, [vnInput], vn-input-field, [vnInputField]"></ng-content>
-        <div vnFlexRow vnFlexGap>
-        
+    <div vnFlexCol vnFlexGap cdkTrapFocus>
+      <ng-content
+        select="ae-input, [vnInput], ae-input-field, [vnInputField]"
+      ></ng-content>
+      <div vnFlexRow vnFlexGap>
         <!-- Submit button -->
-        <button [disabled]="this.formGroup().invalid" type="button" mat-raised-button (click)="submit()">{{submitLabel()}}</button>
+        <button
+          [disabled]="this.formGroup().invalid"
+          type="button"
+          mat-raised-button
+          (click)="submit()"
+        >
+          {{ submitLabel() }}
+        </button>
 
-          <!-- Reset button -->
-         @if(!hideResetButton()){ <button mat-flat-button (click)="reset()">{{resetLabel()}}</button>}
+        <!-- Reset button -->
+        @if (!hideResetButton()) {
+          <button mat-flat-button (click)="reset()">{{ resetLabel() }}</button>
+        }
 
-          <!-- Other action buttons -->
-          <ng-content select="button[vnFormAction]"></ng-content>
-        </div>
+        <!-- Other action buttons -->
+        <ng-content select="button[vnFormAction]"></ng-content>
       </div>
-  `
+    </div>
+  `,
 })
 export class FormComponent {
-
   /**
    * List of input components
    */
-  readonly formInputs = contentChildren<BaseInput>(BaseInput, { descendants: true, })
+  readonly formInputs = contentChildren<BaseInput>(BaseInput, {
+    descendants: true,
+  });
   /**
-   * Submit button label 
+   * Submit button label
    */
-  readonly submitLabel = input<string>("Submit")
+  readonly submitLabel = input<string>('Submit');
 
   /**
    * Reset button label
    */
-  readonly resetLabel = input<string>("Reset")
+  readonly resetLabel = input<string>('Reset');
 
   /**
    * Reactive form group instance
@@ -61,21 +78,19 @@ export class FormComponent {
   /**
    * Hide reset button
    */
-  readonly hideResetButton = input<boolean>(false)
+  readonly hideResetButton = input<boolean>(false);
 
   /**
    * Event to fire when the submit button is clicked.
    */
-  readonly formSubmitEvet = output()
-
+  readonly formSubmitEvet = output();
 
   /**
    * Smit the form value
    */
   submit() {
-    this.formSubmitEvet.emit(this.formGroup().value)
+    this.formSubmitEvet.emit(this.formGroup().value);
   }
-
 
   /**
    * Reset the form value
@@ -85,13 +100,11 @@ export class FormComponent {
   }
 }
 
-
 /**
  * Form module that provides {@link FormComponent} and {@link FormActionDirective}
  */
 @NgModule({
   imports: [FormComponent, FormActionDirective],
   exports: [FormComponent, FormActionDirective],
-
 })
-export class FormModule { }
+export class FormModule {}

@@ -25,26 +25,198 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./public-api.ts",
-      "default": "./public-api.ts"
+      "types": "./src/public-api.ts",
+      "default": "./src/public-api.ts"
     },
     "./media": {
-      "sass": "./media/_index.scss"
+      "sass": "./src/media/_index.scss"
+    },
+    "./flex": {
+      "types": "./src/flex/public-api.ts",
+      "default": "./src/flex/public-api.ts"
+    },
+    "./form": {
+      "types": "./src/form/public-api.ts",
+      "default": "./src/form/public-api.ts"
+    },
+    "./form-sample": {
+      "types": "./src/form-sample/public-api.ts",
+      "default": "./src/form-sample/public-api.ts"
+    },
+    "./input": {
+      "types": "./src/input/public-api.ts",
+      "default": "./src/input/public-api.ts"
+    },
+    "./input-number": {
+      "types": "./src/input-number/public-api.ts",
+      "default": "./src/input-number/public-api.ts"
+    },
+    "./input-text": {
+      "types": "./src/input-text/public-api.ts",
+      "default": "./src/input-text/public-api.ts"
+    },
+    "./number-filter": {
+      "types": "./src/number-filter/public-api.ts",
+      "default": "./src/number-filter/public-api.ts"
+    },
+    "./utils": {
+      "types": "./src/utils/public-api.ts",
+      "default": "./src/utils/public-api.ts"
+    },
+    "./card": {
+      "types": "./src/card/public-api.ts",
+      "default": "./src/card/public-api.ts"
+    },
+    "./layout": {
+      "types": "./src/layout/public-api.ts",
+      "default": "./src/layout/public-api.ts"
+    },
+    "./layout-app": {
+      "types": "./src/layout-app/public-api.ts",
+      "default": "./src/layout-app/public-api.ts"
+    },
+    "./logo": {
+      "types": "./src/logo/public-api.ts",
+      "default": "./src/logo/public-api.ts"
+    },
+    "./input-date": {
+      "types": "./src/input-date/public-api.ts",
+      "default": "./src/input-date/public-api.ts"
+    },
+    "./input-time": {
+      "types": "./src/input-time/public-api.ts",
+      "default": "./src/input-time/public-api.ts"
+    },
+    "./validators": {
+      "types": "./src/validators/public-api.ts",
+      "default": "./src/validators/public-api.ts"
+    },
+    "./select": {
+      "types": "./src/select/public-api.ts",
+      "default": "./src/select/public-api.ts"
+    },
+    "./autocomplete": {
+      "types": "./src/autocomplete/public-api.ts",
+      "default": "./src/autocomplete/public-api.ts"
+    },
+    "./checkbox": {
+      "types": "./src/checkbox/public-api.ts",
+      "default": "./src/checkbox/public-api.ts"
+    },
+    "./button-toggle": {
+      "types": "./src/button-toggle/public-api.ts",
+      "default": "./src/button-toggle/public-api.ts"
+    },
+    "./slide-toggle": {
+      "types": "./src/slide-toggle/public-api.ts",
+      "default": "./src/slide-toggle/public-api.ts"
+    },
+    "./radio": {
+      "types": "./src/radio/public-api.ts",
+      "default": "./src/radio/public-api.ts"
+    },
+    "./fieldset": {
+      "types": "./src/fieldset/public-api.ts",
+      "default": "./src/fieldset/public-api.ts"
+    },
+    "./list": {
+      "types": "./src/list/public-api.ts",
+      "default": "./src/list/public-api.ts"
+    },
+    "./common": {
+      "types": "./src/common/public-api.ts",
+      "default": "./src/common/public-api.ts"
+    },
+    "./icon": {
+      "types": "./src/icon/public-api.ts",
+      "default": "./src/icon/public-api.ts"
+    },
+    "./color": {
+      "types": "./src/color/public-api.ts",
+      "default": "./src/color/public-api.ts"
+    },
+    "./menu": {
+      "types": "./src/menu/public-api.ts",
+      "default": "./src/menu/public-api.ts"
+    },
+    "./layout-web": {
+      "types": "./src/layout-web/public-api.ts",
+      "default": "./src/layout-web/public-api.ts"
+    },
+    "./list-nav": {
+      "types": "./src/list-nav/public-api.ts",
+      "default": "./src/list-nav/public-api.ts"
+    },
+    "./list-select": {
+      "types": "./src/list-select/public-api.ts",
+      "default": "./src/list-select/public-api.ts"
+    },
+    "./input-field": {
+      "types": "./src/input-field/public-api.ts",
+      "default": "./src/input-field/public-api.ts"
+    },
+    "./shadow": {
+      "types": "./src/shadow/public-api.ts",
+      "default": "./src/shadow/public-api.ts"
+    },
+    "./table": {
+      "types": "./src/table/public-api.ts",
+      "default": "./src/table/public-api.ts"
+    },
+    "./casing": {
+      "types": "./src/casing/public-api.ts",
+      "default": "./src/casing/public-api.ts"
+    },
+    "./slider": {
+      "types": "./src/slider/public-api.ts",
+      "default": "./src/slider/public-api.ts"
+    },
+    "./chart": {
+      "types": "./src/chart/public-api.ts",
+      "default": "./src/chart/public-api.ts"
+    },
+    "./input-model-text": {
+      "types": "./src/input-model-text/public-api.ts",
+      "default": "./src/input-model-text/public-api.ts"
+    },
+    "./input-model-number": {
+      "types": "./src/input-model-number/public-api.ts",
+      "default": "./src/input-model-number/public-api.ts"
+    },
+    "./input-model-checkbox": {
+      "types": "./src/input-model-checkbox/public-api.ts",
+      "default": "./src/input-model-checkbox/public-api.ts"
+    },
+    "./form-model": {
+      "types": "./src/form-model/public-api.ts",
+      "default": "./src/form-model/public-api.ts"
+    },
+    "./form-field": {
+      "types": "./src/form-field/public-api.ts",
+      "default": "./src/form-field/public-api.ts"
+    },
+    "./gauge": {
+      "types": "./src/gauge/public-api.ts",
+      "default": "./src/gauge/public-api.ts"
     }
   },
   "peerDependencies": {
     "@aenode/cdk": "workspace:*",
     "@aenode/material": "workspace:*",
-    "@angular/cdk": "^21.2.6",
-    "@angular/material": "^21.2.6",
+    "@angular/cdk": "^22.1.3",
+    "@angular/common": "~22.0.8",
+    "@angular/core": "~22.0.8",
+    "@angular/material": "^22.1.3",
     "@storybook/addon-docs": "^10.3.5",
     "chart.js": "^4.5.1"
   },
   "devDependencies": {
     "@aenode/cdk": "workspace:*",
     "@aenode/material": "workspace:*",
-    "@angular/cdk": "^21.2.6",
-    "@angular/material": "^21.2.6",
+    "@angular/cdk": "^22.1.3",
+    "@angular/common": "~22.0.8",
+    "@angular/core": "~22.0.8",
+    "@angular/material": "^22.1.3",
     "@storybook/addon-docs": "^10.3.5",
     "chart.js": "^4.5.1"
   }

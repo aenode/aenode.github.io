@@ -2,6 +2,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
+    "baseUrl": "",
+    "ignoreDeprecations": "6.0",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "bundler",
@@ -155,6 +157,9 @@
       ],
       "@aenode/material/gauge": [
         "libs/material/src/gauge/public-api.ts"
+      ],
+      "@aenode/material/media": [
+        "libs/material/src/media/_index.scss"
       ]
     }
   },

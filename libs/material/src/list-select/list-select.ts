@@ -1,11 +1,11 @@
+import { FieldsetComponent } from '@aenode/material/fieldset';
+import { BaseInput } from '@aenode/material/input';
 import { Component, input } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
-import { FieldsetComponent } from '@vnodes/material/fieldset';
-import { BaseInput } from '@vnodes/material/input';
 
 @Component({
-  selector: 'vn-input[type="list"], vn-input[type="list-select"],',
+  selector: 'ae-input[type="list"], ae-input[type="list-select"],',
   imports: [FieldsetComponent, ReactiveFormsModule, MatListModule],
   template: `
     @let __label = label();
@@ -16,7 +16,7 @@ import { BaseInput } from '@vnodes/material/input';
     @let __required = required();
     @let __options = options();
 
-    <vn-fieldset [label]="__label">
+    <ae-fieldset [label]="__label">
       @if (__options !== undefined) {
         <mat-selection-list
           #componentRef
@@ -34,7 +34,7 @@ import { BaseInput } from '@vnodes/material/input';
           }
         </mat-selection-list>
       }
-    </vn-fieldset>
+    </ae-fieldset>
   `,
 })
 export class ListSelectComponent<

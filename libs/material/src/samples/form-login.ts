@@ -1,25 +1,56 @@
+import { FlexModule } from '@aenode/material/flex';
+import { FormModule } from '@aenode/material/form';
+import { InputTextComponent } from '@aenode/material/input-text';
+import { InputValidator } from '@aenode/material/validators';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { FlexModule } from '@vnodes/material/flex';
-import { FormModule } from '@vnodes/material/form';
-import { InputTextComponent } from '@vnodes/material/input-text';
-import { InputValidator } from '@vnodes/material/validators';
 
 @Component({
-  selector: 'vn-form[login]',
-  imports: [FormModule, MatButtonModule, ReactiveFormsModule, InputTextComponent, FlexModule],
+  selector: 'ae-form[login]',
+  imports: [
+    FormModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    InputTextComponent,
+    FlexModule,
+  ],
   template: `
-  <form vnForm vnFlexCol vnFlexGap [formGroup]="formGroup" submitLabel="Login" resetLabel="Reset" >  
-    <vn-input type="text" [required]="true" formControlName="username" label="Username" ></vn-input>
-    <vn-input type="text" [required]="true" [password]="true" formControlName="password" label="Password" ></vn-input>
-    <button type="button" mat-flat-button vnFormAction (click)="forgotPassword()">Forgot Password</button>
-  </form>
+    <form
+      vnForm
+      vnFlexCol
+      vnFlexGap
+      [formGroup]="formGroup"
+      submitLabel="Login"
+      resetLabel="Reset"
+    >
+      <ae-input
+        type="text"
+        [required]="true"
+        formControlName="username"
+        label="Username"
+      ></ae-input>
+      <ae-input
+        type="text"
+        [required]="true"
+        [password]="true"
+        formControlName="password"
+        label="Password"
+      ></ae-input>
+      <button
+        type="button"
+        mat-flat-button
+        vnFormAction
+        (click)="forgotPassword()"
+      >
+        Forgot Password
+      </button>
+    </form>
   `,
-  standalone: true
+  standalone: true,
 })
 export class FormLogin {
-  inputValidator = inject(InputValidator)
+  inputValidator = inject(InputValidator);
   formGroup = new FormGroup({
     username: new FormControl('', [
       InputValidator.required(),
@@ -28,14 +59,10 @@ export class FormLogin {
     password: new FormControl('', [
       InputValidator.required(),
       InputValidator.password(),
-
     ]),
   });
 
   forgotPassword() {
-    console.log("Forgot password button clicked")
+    console.log('Forgot password button clicked');
   }
-
-
-
 }

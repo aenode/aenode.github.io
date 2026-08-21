@@ -1,11 +1,9 @@
-
 import { create } from 'storybook/theming';
-
 
 export default create({
   base: 'light',
-  brandTitle: '@vnodes/material | Angular Material Library',
-  brandUrl: 'https://vnodes.github.io',
+  brandTitle: '@aenode/material | Angular material Library',
+  brandUrl: 'https://aenode.github.io',
   brandImage: './favicon.png',
-  brandTarget: '_self'
+  brandTarget: '_self',
 });

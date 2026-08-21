@@ -11,4 +11,3 @@ export default meta;
 type Story = StoryObj<SampleLayoutComponent>;
 
 export const Primary: Story = {};
-

@@ -1,3 +1,5 @@
+/* eslint-disable @nx/enforce-module-boundaries */
+import { InputValidator } from '@aenode/material/validators';
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
@@ -18,6 +20,8 @@ const preview: Preview = {
           { path: 'about', redirectTo: '' },
           { path: 'services', redirectTo: '' },
         ]),
+
+        InputValidator.provideDefault(),
       ],
     }),
   ],

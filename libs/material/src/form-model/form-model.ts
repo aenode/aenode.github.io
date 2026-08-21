@@ -1,42 +1,47 @@
-import { Component, computed, contentChildren, model, NgModule, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  contentChildren,
+  model,
+  NgModule,
+  signal,
+} from '@angular/core';
 import { InputModelDirective } from './input-model';
 
 @Component({
-  selector: 'vn-form, [vnForm]',
-  exportAs: "vnForm",
+  selector: 'ae-form, [aeForm]',
+  exportAs: 'aeForm',
   template: `
-      <form vnFlexCol vnFlexGap>
-        <ng-content ></ng-content>
-      </form>
-  `
+    <form aeFlexCol aeFlexGap>
+      <ng-content></ng-content>
+    </form>
+  `,
 })
 export class FormModelComponent {
-
   readonly errors = model<any>();
 
-  readonly inputs = contentChildren(InputModelDirective)
+  readonly inputs = contentChildren(InputModelDirective);
   readonly value = model<any>();
   readonly isSubmitted = signal<boolean>(false);
 
   readonly isValid = computed(() => {
-    return this.inputs().every(e => e.isValid() && e.isTouched())
-  })
+    return this.inputs().every((e) => e.isValid() && e.isTouched());
+  });
 
   readonly isInvalid = computed(() => {
-    return this.inputs().some(e => e.isInvalid() && e.isTouched())
-  })
+    return this.inputs().some((e) => e.isInvalid() && e.isTouched());
+  });
 
   readonly isTouched = computed(() => {
-    return this.inputs().some(e => e.isTouched())
-  })
+    return this.inputs().some((e) => e.isTouched());
+  });
 
   readonly isDirty = computed(() => {
-    return this.inputs().some(e => e.isDirty())
-  })
+    return this.inputs().some((e) => e.isDirty());
+  });
 
   getInput(name: string) {
-    return this.inputs().find(e => e.name() === name)
-
+    return this.inputs().find((e) => e.name() === name);
   }
 
   markAsDirty(name: string) {
@@ -55,7 +60,6 @@ export class FormModelComponent {
     this.getInput(name)?.isInvalid.set(true);
   }
 
-
   set(value: Record<string, any>) {
     const entries = Object.entries(value);
     for (const [key, value] of entries) {
@@ -64,19 +68,12 @@ export class FormModelComponent {
   }
 
   reset() {
-    this.inputs().forEach(e => e.reset())
+    this.inputs().forEach((e) => e.reset());
   }
-
-
-
-
-
 }
-
 
 @NgModule({
   imports: [FormModelComponent, InputModelDirective],
-  exports: [FormModelComponent, InputModelDirective]
-
+  exports: [FormModelComponent, InputModelDirective],
 })
-export class FormModelModule { }
+export class FormModelModule {}

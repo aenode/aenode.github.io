@@ -1,14 +1,13 @@
+import { ShadowLevel, shadowVar } from '@aenode/material/common';
 import { computed, Directive, input } from '@angular/core';
-import { ShadowLevel, shadowVar } from '@vnodes/material/common';
 
 @Directive({
-  selector: '[vnShadow]',
+  selector: '[aeShadow]',
   host: {
     '[style.box-shadow]': 'vnvnShadowComputed()',
-  }
+  },
 })
 export class ShadowDirective {
-  vnShadow = input.required<ShadowLevel>()
-  protected vnvnShadowComputed = computed(() => shadowVar(this.vnShadow()))
-
+  vnShadow = input.required<ShadowLevel>();
+  protected vnvnShadowComputed = computed(() => shadowVar(this.vnShadow()));
 }

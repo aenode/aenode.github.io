@@ -2,7 +2,7 @@
   "name": "material",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/material/src",
-  "prefix": "lib",
+  "prefix": "ae",
   "projectType": "library",
   "release": {
     "version": {
@@ -11,7 +11,7 @@
       "fallbackCurrentVersionResolver": "disk"
     }
   },
-  "tags": [],
+  "tags": ["lib:material"],
   "targets": {
     "build": {
       "executor": "@nx/angular:package",

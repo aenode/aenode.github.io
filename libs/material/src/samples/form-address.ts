@@ -1,32 +1,35 @@
+import { FlexModule } from '@aenode/material/flex';
+import { FormModule } from '@aenode/material/form';
+import { InputFieldComponent } from '@aenode/material/input-field';
+import { InputValidator } from '@aenode/material/validators';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { FlexModule } from '@vnodes/material/flex';
-import { FormModule } from '@vnodes/material/form';
-import { InputFieldComponent } from '@vnodes/material/input-field';
-import { InputValidator } from '@vnodes/material/validators';
-
-
 
 @Component({
-  selector: 'vn-form[address]',
+  selector: 'ae-form[address]',
   imports: [FormModule, ReactiveFormsModule, InputFieldComponent, FlexModule],
   template: `
-  <form vnForm vnFlexCol vnFlexGap [formGroup]="formGroup" (formSubmitEvet)="handleFormSubmit($event)">  
-
-  <div vnInput>
-    @for(input of inputs; track input.name){ 
-      <vn-input-field [type]="input.type" [formControlName]="input.name" [label]="input.label"></vn-input-field>
-    }
-  </div>
-    
-  </form>
-  `
+    <form
+      vnForm
+      vnFlexCol
+      vnFlexGap
+      [formGroup]="formGroup"
+      (formSubmitEvet)="handleFormSubmit($event)"
+    >
+      <div vnInput>
+        @for (input of inputs; track input.name) {
+          <ae-input-field
+            [type]="input.type"
+            [formControlName]="input.name"
+            [label]="input.label"
+          ></ae-input-field>
+        }
+      </div>
+    </form>
+  `,
 })
 export class FormAddress {
-
-
-
-  inputValidator = inject(InputValidator)
+  inputValidator = inject(InputValidator);
   formGroup = new FormGroup({
     unit: new FormControl('', []),
     street: new FormControl('', [InputValidator.required]),
@@ -37,18 +40,16 @@ export class FormAddress {
     active: new FormControl(false, [InputValidator.required]),
   });
 
-  inputs: { name: string, label: string, required?: boolean, type: any }[] = [
-    { name: "unit", label: "unit", type: "text" },
-    { name: "street", label: "street", type: "text" },
-    { name: "city", label: "city", type: "text" },
-    { name: "state", label: "state", type: "text" },
-    { name: "country", label: "country", type: "text" },
-    { name: "active", label: "Active", type: "checkbox" },
-  ]
+  inputs: { name: string; label: string; required?: boolean; type: any }[] = [
+    { name: 'unit', label: 'unit', type: 'text' },
+    { name: 'street', label: 'street', type: 'text' },
+    { name: 'city', label: 'city', type: 'text' },
+    { name: 'state', label: 'state', type: 'text' },
+    { name: 'country', label: 'country', type: 'text' },
+    { name: 'active', label: 'Active', type: 'checkbox' },
+  ];
 
   handleFormSubmit(value: any) {
-    console.log("Addredd form submit: ", value)
-
+    console.log('Addredd form submit: ', value);
   }
-
 }

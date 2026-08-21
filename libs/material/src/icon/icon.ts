@@ -1,16 +1,14 @@
 import { Directive, input } from '@angular/core';
 
-
-
 /**
- * Add `.fill` class to the icon component 
+ * Add `.fill` class to the icon component
  */
 @Directive({
-  selector: '[vnIconFill]',
+  selector: '[aeIconFill]',
   host: {
-    '[class.fill]': 'vnIconFill()'
-  }
+    '[class.fill]': 'aeIconFill()',
+  },
 })
 export class IconFillDirective {
-  vnIconFill = input(false)
+  aeIconFill = input(false);
 }

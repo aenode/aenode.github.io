@@ -19,13 +19,13 @@ import {
   standalone: true,
 })
 export class NumberFilterDirective {
-  vnDecimals = input<number>(6);
-  vnNumberType = input.required<'number' | 'integer' | 'decimal'>();
+  aeDecimals = input<number>(6);
+  aeNumberType = input.required<'number' | 'integer' | 'decimal'>();
 
   readonly elementRef = inject(ElementRef<HTMLInputElement>);
 
   protected isInteger() {
-    return this.vnNumberType() === 'integer';
+    return this.aeNumberType() === 'integer';
   }
 
   @HostListener('keydown', ['$event'])
@@ -63,7 +63,7 @@ export class NumberFilterDirective {
 
       // Here
 
-      if (decimalLen >= this.vnDecimals()) {
+      if (decimalLen >= this.aeDecimals()) {
         if (!isOverriding) {
           if (selectionStart && selectionStart > intLen) {
             this.preventDefault(event);

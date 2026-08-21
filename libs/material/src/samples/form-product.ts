@@ -1,21 +1,21 @@
+import { ButtonToggleComponent } from '@aenode/material/button-toggle';
+import { CheckboxComponent } from '@aenode/material/checkbox';
+import { FlexModule } from '@aenode/material/flex';
+import { FormModule } from '@aenode/material/form';
+import { InputNumberComponent } from '@aenode/material/input-number';
+import { InputTextComponent } from '@aenode/material/input-text';
+import { ListSelectComponent } from '@aenode/material/list-select';
+import { RadioComponent } from '@aenode/material/radio';
+import { SlideToggleComponent } from '@aenode/material/slide-toggle';
+import { InputValidator } from '@aenode/material/validators';
 import { JsonPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ButtonToggleComponent } from '@vnodes/material/button-toggle';
-import { CheckboxComponent } from '@vnodes/material/checkbox';
-import { FlexModule } from '@vnodes/material/flex';
-import { FormModule } from '@vnodes/material/form';
-import { InputNumberComponent } from '@vnodes/material/input-number';
-import { InputTextComponent } from '@vnodes/material/input-text';
-import { ListSelectComponent } from '@vnodes/material/list-select';
-import { RadioComponent } from '@vnodes/material/radio';
-import { SlideToggleComponent } from '@vnodes/material/slide-toggle';
-import { InputValidator } from '@vnodes/material/validators';
 import { InputOption } from '../input/input';
 import { SelectComponent } from '../select/select';
 
 @Component({
-  selector: 'vn-form[product]',
+  selector: 'ae-form[product]',
   imports: [
     FormModule,
     ReactiveFormsModule,
@@ -39,92 +39,92 @@ import { SelectComponent } from '../select/select';
       [formGroup]="formGroup"
       (formSubmitEvet)="handleFormSubmit($event)"
     >
-      <vn-input
+      <ae-input
         formControlName="name"
         type="text"
         [required]="true"
         label="Name"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="description"
         type="text"
         [required]="true"
         label="Description"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="upc"
         type="text"
         [required]="true"
         label="Unique Product Code"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="serialNumber"
         type="text"
         [required]="true"
         label="Serial Number"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="price"
         type="number"
         [decimals]="2"
         [required]="true"
         label="Price"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="cost"
         type="number"
         [decimals]="2"
         [required]="true"
         label="Cost"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="quantity"
         type="integer"
         [min]="0"
         [required]="true"
         label="Quantity"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="category"
         type="select"
         [options]="categories"
         [defaultValue]="categories[0].value"
         [required]="true"
         label="Category"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="supplier"
         type="list"
         [defaultValue]="suppliers[0].value"
         [options]="suppliers"
         [required]="true"
         label="Supplier"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="size"
         type="button-toggle"
         [defaultValue]="sizes[0].value"
         [options]="sizes"
         [required]="true"
         label="Size"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="store"
         type="radio"
         [options]="stores"
         [defaultValue]="stores[0].value"
         label="Store"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="active"
         type="slider"
         label="Active"
-      ></vn-input>
-      <vn-input
+      ></ae-input>
+      <ae-input
         formControlName="onSale"
         type="checkbox"
         label="On Sale"
-      ></vn-input>
+      ></ae-input>
     </form>
   `,
 })

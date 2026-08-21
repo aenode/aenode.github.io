@@ -1,5 +1,5 @@
+import { InputOption } from '@aenode/material/input';
 import type { Meta, StoryObj } from '@storybook/angular';
-import { InputOption } from '@vnodes/material/input';
 import { expect, userEvent } from 'storybook/test';
 import { ListSelectComponent } from './list-select';
 
