@@ -1,0 +1,19 @@
+import { A11yModule } from '@angular/cdk/a11y';
+import { Component, input } from '@angular/core';
+
+@Component({
+  selector: 'ae-fieldset',
+  imports: [A11yModule],
+  template: `
+    <fieldset [cdkTrapFocus]="true">
+      <legend>{{ label() }}</legend>
+      <ng-content></ng-content>
+    </fieldset>
+  `,
+})
+export class FieldsetComponent {
+  /**
+   * Input description
+   */
+  label = input.required<string>();
+}

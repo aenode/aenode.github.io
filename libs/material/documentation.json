@@ -1,0 +1,85 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "Material",
+            "id": "component-Material-eae6e32913532c07358a5e17573514beda601895710ca79d1da725fdc218e0d25ce78e22a42748b97eb82b896fe8a244f37868399cf056a75722136a52ed6041",
+            "file": "libs/material/src/lib/material/material.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-material",
+            "styleUrls": [
+                "./material.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./material.html"
+            ],
+            "templateVariables": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "coverageIgnore": false,
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'lib-material',\n  imports: [],\n  templateUrl: './material.html',\n  styleUrl: './material.css',\n})\nexport class Material {}\n",
+            "styleUrl": "./material.css",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./material.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "relationships": {
+                "incoming": [],
+                "outgoing": []
+            },
+            "templateData": "<p>Material works!</p>\n"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": [],
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "libs/material/src/lib/material/material.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Material",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

@@ -1,0 +1,137 @@
+import {
+  clipboardText,
+  dispatchEmptyInputEvent,
+  isDigitString,
+  isIntegerString,
+  isKeyboardCommandEvent,
+  isNumberString,
+} from '@aenode/material/utils';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  inject,
+  input,
+} from '@angular/core';
+
+@Directive({
+  selector: '[aeNumberFilter]',
+  standalone: true,
+})
+export class NumberFilterDirective {
+  vnDecimals = input<number>(6);
+  vnNumberType = input.required<'number' | 'integer' | 'decimal'>();
+
+  readonly elementRef = inject(ElementRef<HTMLInputElement>);
+
+  protected isInteger() {
+    return this.vnNumberType() === 'integer';
+  }
+
+  @HostListener('keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent) {
+    const currentKey = event.key;
+
+    const element = this.elementRef.nativeElement;
+
+    const previousValue = element.value?.toString() ?? '';
+    const hasMinus = !!previousValue?.includes('-');
+    const hasDot = !!previousValue?.includes('.');
+    const selectionStart = (event.target as HTMLInputElement).selectionStart;
+    const selectionEnd = (event.target as HTMLInputElement).selectionEnd;
+    const [intPart, decimalPart] = (previousValue ?? '').toString().split('.');
+    const intLen = intPart?.length ?? 0;
+    const decimalLen = decimalPart?.length ?? 0;
+    const isOverriding =
+      Math.abs((selectionStart ?? 0) - (selectionEnd ?? 0)) > 0;
+
+    if (isKeyboardCommandEvent(event)) {
+      return;
+    } else if (
+      !isDigitString(currentKey) &&
+      !(currentKey === '.' || currentKey === '-')
+    ) {
+      this.preventDefault(event);
+      return;
+    }
+
+    if (previousValue !== '') {
+      if (intLen >= Number.MAX_SAFE_INTEGER.toString().length) {
+        this.preventDefault(event);
+        return;
+      }
+
+      // Here
+
+      if (decimalLen >= this.vnDecimals()) {
+        if (!isOverriding) {
+          if (selectionStart && selectionStart > intLen) {
+            this.preventDefault(event);
+          }
+        }
+      }
+    }
+
+    if (currentKey === '.') {
+      // And the input is INTEGER
+      if (this.isInteger() || hasDot) {
+        // Then prevent event
+        this.preventDefault(event);
+      } else {
+        if (previousValue === '') {
+          this.preventDefault(event);
+          element.value = `0.`;
+          dispatchEmptyInputEvent(element);
+        }
+      }
+
+      // If the key is minus
+    } else if (currentKey === '-') {
+      if (hasMinus) {
+        // Then toggle the sign
+        this.preventDefault(event);
+        element.value = previousValue.slice(1);
+        dispatchEmptyInputEvent(element);
+      } else {
+        // Else add the sign
+        event.preventDefault();
+        element.value = `-${previousValue}`;
+        dispatchEmptyInputEvent(element);
+      }
+    } else if (currentKey === '0') {
+      if (
+        previousValue === '0' ||
+        previousValue === '-0' ||
+        selectionStart === 0
+      ) {
+        this.preventDefault(event);
+      }
+    } else if (previousValue === '0') {
+      this.preventDefault(event);
+      element.value = `${currentKey}`;
+      dispatchEmptyInputEvent(element);
+    } else if (previousValue === '-0') {
+      this.preventDefault(event);
+      element.value = `-${currentKey}`;
+      dispatchEmptyInputEvent(element);
+    }
+  }
+
+  preventDefault(event: Event) {
+    event.preventDefault();
+  }
+
+  @HostListener('paste', ['$event'])
+  onPaste(event: ClipboardEvent) {
+    const pastedText = clipboardText(event);
+    if (!pastedText) return;
+
+    const isValidNumberString = this.isInteger()
+      ? isIntegerString
+      : isNumberString;
+
+    if (!isValidNumberString(pastedText)) {
+      this.preventDefault(event);
+    }
+  }
+}

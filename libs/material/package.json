@@ -1,0 +1,51 @@
+{
+  "name": "@aenode/material",
+  "version": "0.0.1",
+  "description": "Aenode Material Library",
+  "keywords": [
+    "plugin"
+  ],
+  "author": {
+    "name": "Ahmet Emrebas",
+    "email": "aesys+material@proton.me",
+    "url": "https://aenode.github.io/aenode"
+  },
+  "homepage": "https://aenode.github.io/libs/material",
+  "icon": "https://aenode.github.io/libs/material/favicon.png",
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
+  "files": [
+    "*"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./public-api.ts",
+      "default": "./public-api.ts"
+    },
+    "./media": {
+      "sass": "./media/_index.scss"
+    }
+  },
+  "peerDependencies": {
+    "@aenode/cdk": "workspace:*",
+    "@aenode/material": "workspace:*",
+    "@angular/cdk": "^21.2.6",
+    "@angular/material": "^21.2.6",
+    "@storybook/addon-docs": "^10.3.5",
+    "chart.js": "^4.5.1"
+  },
+  "devDependencies": {
+    "@aenode/cdk": "workspace:*",
+    "@aenode/material": "workspace:*",
+    "@angular/cdk": "^21.2.6",
+    "@angular/material": "^21.2.6",
+    "@storybook/addon-docs": "^10.3.5",
+    "chart.js": "^4.5.1"
+  }
+}

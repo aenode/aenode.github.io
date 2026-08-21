@@ -1,0 +1,46 @@
+{
+  "name": "@vnodes/material",
+  "version": "0.0.16",
+  "description": "Vnodes Material Library",
+  "keywords": [
+    "plugin"
+  ],
+  "author": {
+    "name": "Robert Brightline",
+    "email": "robert.brightline+vnodes-material@gmail.com",
+    "url": "https://vnodes.github.io/vnodes"
+  },
+  "homepage": "https://vnodes.github.io/libs/material",
+  "icon": "https://vnodes.github.io/libs/material/favicon.png",
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
+  "files": [
+    "*"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./public-api.ts",
+      "default": "./public-api.ts"
+    },
+    "./media": {
+      "sass": "./media/_index.scss"
+    }
+  },
+  "peerDependencies": {
+    "@angular/cdk": "^21.2.6",
+    "@angular/material": "^21.2.6",
+    "rxjs": "~7.8.0"
+  },
+  "devDependencies": {
+    "@angular/cdk": "^21.2.6",
+    "@angular/material": "^21.2.6",
+    "@storybook/addon-docs": "^10.3.5",
+    "@vnodes/material": "workspace:*"
+  }
+}

@@ -1,0 +1,48 @@
+import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { BaseInput } from '@vnodes/material/input';
+
+
+@Component({
+  selector: 'vn-input[type="text"], vn-input[type="string"],',
+  imports: [ReactiveFormsModule, MatIconModule, MatFormFieldModule, MatInputModule],
+  template: `
+   @let control =  formControl(); 
+
+   @if(control){ 
+     <mat-form-field>
+       <!-- Description -->
+      @if(label()){ <mat-label>{{ label() }}</mat-label>}
+      @if (hint()) { <mat-hint>{{ hint() }}</mat-hint> }
+
+      <!-- Prefix/Suffix -->
+      @if(textPrefix()){ <span matTextPrefix>{{textPrefix()}}</span>}
+      @if(textSuffix()){ <span matTextSuffix>{{textSuffix()}}</span>}
+      @if(iconPrefix()){  <mat-icon matIconPrefix>{{iconPrefix()}}</mat-icon>}
+      @if(iconSuffix()){  <mat-icon matIconSuffix>{{iconSuffix()}}</mat-icon>}
+
+
+      <!-- Errors -->
+      <mat-error>{{errorMessage()}}</mat-error>
+
+       <input
+       type="text"
+       autocomplete="off"
+       matInput
+       [formControl]="formControl()"
+       [placeholder]="placeholder()"
+       [disabled]="disabled()"
+       [minlength]="minlength()"
+       [maxlength]="maxlength()"
+       [required]="required()"
+       />
+       
+      </mat-form-field>
+      
+    }    
+    `
+})
+export class InputTextComponent extends BaseInput<string> {}

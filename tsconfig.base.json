@@ -1,0 +1,165 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": false,
+    "paths": {
+      "@aenode/material": [
+        "./libs/material/src/index.ts"
+      ],
+      "@aenode/cdk": [
+        "./libs/cdk/src/index.ts"
+      ],
+      "@aenode/material/samples": [
+        "libs/material/src/samples/public-api.ts"
+      ],
+      "@aenode/material/flex": [
+        "libs/material/src/flex/public-api.ts"
+      ],
+      "@aenode/material/form": [
+        "libs/material/src/form/public-api.ts"
+      ],
+      "@aenode/material/input-number": [
+        "libs/material/src/input-number/public-api.ts"
+      ],
+      "@aenode/material/input-text": [
+        "libs/material/src/input-text/public-api.ts"
+      ],
+      "@aenode/material/input": [
+        "libs/material/src/input/public-api.ts"
+      ],
+      "@aenode/material/number-filter": [
+        "libs/material/src/number-filter/public-api.ts"
+      ],
+      "@aenode/material/utils": [
+        "libs/material/src/utils/public-api.ts"
+      ],
+      "@aenode/material/card": [
+        "libs/material/src/card/public-api.ts"
+      ],
+      "@aenode/material/layout": [
+        "libs/material/src/layout/public-api.ts"
+      ],
+      "@aenode/material/layout-app": [
+        "libs/material/src/layout-app/public-api.ts"
+      ],
+      "@aenode/material/logo": [
+        "libs/material/src/logo/public-api.ts"
+      ],
+      "@aenode/material/input-date": [
+        "libs/material/src/input-date/public-api.ts"
+      ],
+      "@aenode/material/input-time": [
+        "libs/material/src/input-time/public-api.ts"
+      ],
+      "@aenode/material/validators": [
+        "libs/material/src/validators/public-api.ts"
+      ],
+      "@aenode/material/select": [
+        "libs/material/src/select/public-api.ts"
+      ],
+      "@aenode/material/autocomplete": [
+        "libs/material/src/autocomplete/public-api.ts"
+      ],
+      "@aenode/material/checkbox": [
+        "libs/material/src/checkbox/public-api.ts"
+      ],
+      "@aenode/material/button-toggle": [
+        "libs/material/src/button-toggle/public-api.ts"
+      ],
+      "@aenode/material/slide-toggle": [
+        "libs/material/src/slide-toggle/public-api.ts"
+      ],
+      "@aenode/material/radio": [
+        "libs/material/src/radio/public-api.ts"
+      ],
+      "@aenode/material/fieldset": [
+        "libs/material/src/fieldset/public-api.ts"
+      ],
+      "@aenode/source/checkbox-group": [
+        "libs/material/src/checkbox-group/public-api.ts"
+      ],
+      "@aenode/material/list": [
+        "libs/material/src/list/public-api.ts"
+      ],
+      "@aenode/material/nav-list": [
+        "libs/material/src/nav-list/public-api.ts"
+      ],
+      "@aenode/material/common": [
+        "libs/material/src/common/public-api.ts"
+      ],
+      "@aenode/material/icon": [
+        "libs/material/src/icon/public-api.ts"
+      ],
+      "@aenode/material/color": [
+        "libs/material/src/color/public-api.ts"
+      ],
+      "@aenode/material/menu": [
+        "libs/material/src/menu/public-api.ts"
+      ],
+      "@aenode/material/layout-web": [
+        "libs/material/src/layout-web/public-api.ts"
+      ],
+      "@aenode/material/list-nav": [
+        "libs/material/src/list-nav/public-api.ts"
+      ],
+      "@aenode/material/list-select": [
+        "libs/material/src/list-select/public-api.ts"
+      ],
+      "@aenode/material/input-field": [
+        "libs/material/src/input-field/public-api.ts"
+      ],
+      "@aenode/material/shadow": [
+        "libs/material/src/shadow/public-api.ts"
+      ],
+      "@aenode/material/table": [
+        "libs/material/src/table/public-api.ts"
+      ],
+      "@aenode/material/casing": [
+        "libs/material/src/casing/public-api.ts"
+      ],
+      "@aenode/material/slider": [
+        "libs/material/src/slider/public-api.ts"
+      ],
+      "@aenode/material/chart": [
+        "libs/material/src/chart/public-api.ts"
+      ],
+      "@aenode/material/input-model-text": [
+        "libs/material/src/input-model-text/public-api.ts"
+      ],
+      "@aenode/material/input-model-number": [
+        "libs/material/src/input-model-number/public-api.ts"
+      ],
+      "@aenode/material/input-model-checkbox": [
+        "libs/material/src/input-model-checkbox/public-api.ts"
+      ],
+      "@aenode/material/form-model": [
+        "libs/material/src/form-model/public-api.ts"
+      ],
+      "@aenode/material/form-field": [
+        "libs/material/src/form-field/public-api.ts"
+      ],
+      "@aenode/material/gauge": [
+        "libs/material/src/gauge/public-api.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "./*.ts",
+    "../src/**/*.ts",
+  ],
+  "exclude": [
+    "../src/**/*.spec.ts",
+    "../src/public-api.ts"
+  ]
+}

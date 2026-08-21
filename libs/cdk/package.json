@@ -1,0 +1,41 @@
+{
+  "name": "@aenode/cdk",
+  "version": "0.0.1",
+  "description": "Aenode cdk Library",
+  "keywords": [
+    "plugin"
+  ],
+  "author": {
+    "name": "Ahmet Emrebas",
+    "email": "aesys+cdk@proton.me",
+    "url": "https://aenode.github.io/aenode"
+  },
+  "homepage": "https://aenode.github.io/libs/cdk",
+  "icon": "https://aenode.github.io/libs/cdk/favicon.png",
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
+  "files": [
+    "*"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./public-api.ts",
+      "default": "./public-api.ts"
+    },
+    "./media": {
+      "sass": "./media/_index.scss"
+    }
+  },
+  "peerDependencies": {
+    "@angular/core": "~22.0.4"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "^10.3.5"
+  }
+}
