@@ -10,8 +10,8 @@
     "email": "aesys+cdk@proton.me",
     "url": "https://aenode.github.io/aenode"
   },
-  "homepage": "https://aenode.github.io/libs/cdk",
-  "icon": "https://aenode.github.io/libs/cdk/favicon.png",
+  "homepage": "https://aenode.github.io/aenode/libs/cdk",
+  "icon": "https://aenode.github.io/favicon.png",
   "funding": [
     "https://cash.app/$puqlib"
   ],

@@ -10,8 +10,8 @@
     "email": "aesys+material@proton.me",
     "url": "https://aenode.github.io/aenode"
   },
-  "homepage": "https://aenode.github.io/libs/material",
-  "icon": "https://aenode.github.io/libs/material/favicon.png",
+  "homepage": "https://aenode.github.io/aenode/libs/material",
+  "icon": "https://aenode.github.io/favicon.png",
   "funding": [
     "https://cash.app/$puqlib"
   ],
