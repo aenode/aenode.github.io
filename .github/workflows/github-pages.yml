@@ -1,4 +1,4 @@
-name: ci
+name: github-pages
 on:
   push:
     branches:
@@ -55,7 +55,13 @@ jobs:
       - name: Build
         uses: nick-fields/retry@v3
         with:
-          command: pnpm nx run-many -t build-storybook
+          timeout_minutes: 15
+          max_attempts: 3
+          retry_wait_seconds: 5
+          command: |
+            pnpm nx build web
+            pnpm nx run-many -t build-storybook
+            cp ./dist/apps/web/browser ./public
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
