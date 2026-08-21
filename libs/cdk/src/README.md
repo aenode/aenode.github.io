@@ -1,26 +1,26 @@
-![Npm version](https://img.shields.io/npm/v/@vnodes/material)
-![Npm downloads](https://img.shields.io/npm/dm/@vnodes/material)
-![Build Status](https://img.shields.io/github/actions/workflow/status/vnodes.github.io/vnodes.github.io.github.io/ci.yml)
-![Doc Status](https://img.shields.io/github/actions/workflow/status/vnodes.github.io/vnodes.github.io.github.io/doc.yml)
-![Bundle size](https://img.shields.io/bundlephobia/min/@vnodes/material)
+![Npm version](https://img.shields.io/npm/v/@aenode/cdk)
+![Npm downloads](https://img.shields.io/npm/dm/@aenode/cdk)
+![Build Status](https://img.shields.io/github/actions/workflow/status/aenode.github.io/aenode.github.io.github.io/ci.yml)
+![Doc Status](https://img.shields.io/github/actions/workflow/status/aenode.github.io/aenode.github.io.github.io/doc.yml)
+![Bundle size](https://img.shields.io/bundlephobia/min/@aenode/cdk)
 
 <p align="center">
-  <img   srcset="./assets/favicon.png, https://vnodes.github.io/favicon.png" alt="Logo"  width="200" height="200" style="border-radius: 100%"/>
+  <img   src="https://aenode.github.io/favicon.png" alt="App Logo"  width="128" height="128" style="border-radius: 32px;"/>
 </p>
 
-## @vnodes/material
+## @aenode/cdk
 
-Angula material library 
+Angula cdk
 
 ## Installation
 
 ```bash
-pnpm add @vnodes/material
+pnpm add @aenode/cdk
 ```
 
 ## 💖 Support My Work
 
-If you find my open-source contributions or the **@vnodes/material** project helpful, consider supporting my work. Your sponsorship helps me maintain these projects and explore new enterprise patterns.
+If you find my open-source contributions or the **@aenode/cdk** project helpful, consider supporting my work. Your sponsorship helps me maintain these projects and explore new enterprise patterns.
 
 [![CashApp](https://img.shields.io/badge/Sponsor%20me-%23EA4AAA.svg?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://cash.app/$puqlib)
 
@@ -29,7 +29,7 @@ If you find my open-source contributions or the **@vnodes/material** project hel
 ## 🤝 Connect with Me
 
 <p align="left">
-<a href="mailto:robert.brightline+vnodes-material@gmail.com">
+<a href="mailto:aenode+aenode-cdk@proton.me">
 <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
 </a>
 </p>
