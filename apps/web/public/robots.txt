@@ -4,8 +4,8 @@ Allow: /
 
 # Prevent crawlers from indexing specific technical or private folders
 Disallow: /admin/
-Disallow: /vnodes/
+Disallow: /aenode/
 Disallow: /libs/
 
 # Point to your sitemap to help crawlers find your hash-based sub-pages
-Sitemap: https://www.vnodes.github.io/sitemap.xml
+Sitemap: https://www.aenode.github.io/sitemap.xml

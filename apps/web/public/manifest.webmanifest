@@ -8,14 +8,14 @@
   "background_color": "#121316",
   "screenshots": [
     {
-      "src": "screenshots/mobile-screenshot.png",
+      "src": "screenshots/mobile.png",
       "sizes": "750x1334",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Dashboard on Mobile"
     },
     {
-      "src": "screenshots/desktop-screenshot.png",
+      "src": "screenshots/desktop.png",
       "sizes": "1920x1080",
       "type": "image/png",
       "form_factor": "wide",
